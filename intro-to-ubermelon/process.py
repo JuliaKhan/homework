@@ -33,11 +33,13 @@ def count_orders(log_file): #for fun / harder practice.
         else:
             order_loc = orders.index(user)
             tally[order_loc] += 1
+
     x = 0
     while x < len(orders):
         final_list.append([orders[x],tally[x]])
         x += 1
     final_list.sort()
+    
     for row in final_list:
         a = f"{row[0]} made {row[1]} order"
         if row[1] > 1:
