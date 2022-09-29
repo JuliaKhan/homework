@@ -1,40 +1,33 @@
-print("Day 1")
-the_file = open("um-deliveries-day-1.txt")
-for line in the_file:
-    line = line.rstrip()
-    words = line.split('|')
+"""Prints a summary of melon deliveries.
 
-    melon = words[0]
-    count = words[0]
-    amount = words[0]
+Defines a function which accepts a file name containing lines of the form
+'<melon>|<quantity>|<cost>' and prints a report with lines in the form 
+'Delivered <quantity> <melon>(s) for a total of $<cost>'
 
-    print(f"Delivered {count} {melon}s for total of ${amount}")
-the_file.close()
+Calls that function for days 1, 2, and 3.
+"""
 
 
-print("Day 2")
-the_file = open("um-deliveries-day-2.txt")
-for line in the_file:
-    line = line.rstrip()
-    words = line.split('|')
+def daily_summary(the_file):
+    for line in open(the_file):
+        line = line.rstrip()
+        words = line.split('|')
 
-    melon = words[0]
-    count = words[0]
-    amount = words[0]
+        melon = words[0]
+        count = words[1]
+        amount = words[2]
 
-    print(f"Delivered {count} {melon}s for total of ${amount}")
-the_file.close()
+        if count == '1':
+            plural = ''
+        else: plural = 's'
 
+        print(f"Delivered {count} {melon}{plural} for total of ${amount}")
 
-print("Day 3")
-the_file = open("um-deliveries-day-3.txt")
-for line in the_file:
-    line = line.rstrip()
-    words = line.split('|')
+print("Day 1\n")
+daily_summary("um-deliveries-day-1.txt")
 
-    melon = words[0]
-    count = words[0]
-    amount = words[0]
+print("\nDay 2\n")
+daily_summary("um-deliveries-day-2.txt")
 
-    print(f"Delivered {count} {melon}s for total of ${amount}")
-the_file.close()
+print("\nDay 3\n")
+daily_summary("um-deliveries-day-3.txt")
