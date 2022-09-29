@@ -1,14 +1,11 @@
-"""Prints a summary of melon deliveries.
-
-Defines a function which accepts a file name containing lines of the form
-'<melon>|<quantity>|<cost>' and prints a report with lines in the form 
-'Delivered <quantity> <melon>(s) for a total of $<cost>'
-
-Calls that function for days 1, 2, and 3.
-"""
-
-
 def daily_summary(the_file):
+    """Prints a summary of melon deliveries.
+
+    Reads a file containing lines in the form
+    '<melon>|<quantity>|<cost>' and prints a report with lines in the form 
+    'Delivered <quantity> <melon>(s) for a total of $<cost>'
+    """
+
     for line in open(the_file):
         line = line.rstrip()
         words = line.split('|')
